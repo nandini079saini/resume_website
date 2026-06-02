@@ -9,105 +9,95 @@
   <body>
     <div class="container">
       <div class="form-section">
-        <label>Name</label>
-        <input type="text" id="nameInput" />
+        <label for="nameInput">Name</label>
+        <input type="text" id="nameInput" name="name" />
 
-        <label>LinkedIn</label>
-        <input type="text" id="linkedInInput" />
+        <label for="linkedInInput">LinkedIn</label>
+        <input type="text" id="linkedInInput" name="linkedin" />
 
-        <label>Email</label>
-        <input type="email" id="emailInput" />
+        <label for="emailInput">Email</label>
+        <input type="email" id="emailInput" name="email" />
 
-        <label>Contact</label>
-        <input type="text" id="contactInput" />
+        <label for="contactInput">Contact</label>
+        <input type="text" id="contactInput" name="contact" />
 
-        <label>GitHub</label>
-        <input type="text" id="githubInput" />
+        <label for="githubInput">GitHub</label>
+        <input type="text" id="githubInput" name="github" />
 
-        <label>College Name</label>
-        <input type="text" id="collegeInput" />
+        <label for="collegeInput">College Name</label>
+        <input type="text" id="collegeInput" name="college" />
 
-        <label>Degree Name</label>
-        <input type="text" id="degreeInput" />
+        <label for="degreeInput">Degree Name</label>
+        <input type="text" id="degreeInput" name="degree" />
 
-        <label>Graduation Year</label>
-        <input type="text" id="gradYearInput" />
+        <label for="gradYearInput">Graduation Year</label>
+        <input type="text" id="gradYearInput" name="gradYear" />
 
-        <label>CGPA</label>
-        <input type="text" id="cgpaInput" />
+        <label for="cgpaInput">CGPA</label>
+        <input type="text" id="cgpaInput" name="cgpa" />
 
-        <button type="button" id="addEducationBtn">+ Add More Education</button>
+        <label for="languagesInput">Frameworks and Languages</label>
+        <input type="text" id="languagesInput" name="languages" />
 
-        <label>Frameworks and Languages</label>
-        <input type="text" id="languagesInput" />
+        <label for="toolsInput">Tools and Integration</label>
+        <input type="text" id="toolsInput" name="tools" />
 
-        <label>Tools and Integration</label>
-        <input type="text" id="toolsInput" />
+        <label for="aiInput">AI & Machine Learning</label>
+        <input type="text" id="aiInput" name="ai" />
 
-        <label>AI & Machine Learning</label>
-        <input type="text" id="aiInput" />
+        <label for="roleInput">Role</label>
+        <input type="text" id="roleInput" name="role" />
 
-        <button type="button" id="addSkillBtn">+ Add More Skills</button>
+        <label for="durationInput">Duration</label>
+        <input type="text" id="durationInput" name="duration" />
 
-        <label>Role</label>
-        <input type="text" id="roleInput" />
+        <label for="descriptionInput">Work Description</label>
+        <textarea id="descriptionInput" name="description"></textarea>
 
-        <label>Duration</label>
-        <input type="text" id="durationInput" />
+        <label for="awardInput">Award Name</label>
+        <input type="text" id="awardInput" name="award" />
 
-        <label>Work Description</label>
-        <textarea id="descriptionInput"></textarea>
-        <button type="button" id="addExperienceBtn">
-          + Add More Experiences
-        </button>
+        <label for="awardDescriptionInput">Award Description</label>
+        <textarea id="awardDescriptionInput" name="awardDescription"></textarea>
 
-        <label>Award Name</label>
-        <input type="text" id="awardInput" />
+        <label for="projectInput">Project Name</label>
+        <input type="text" id="projectInput" name="project" />
 
-        <label>Award Description</label>
-        <textarea id="awardDescriptionInput"></textarea>
-        <button type="button" id="addAwardBtn">+ Add More Awards</button>
+        <label for="projectDescriptionInput">Project Description</label>
+        <textarea
+          id="projectDescriptionInput"
+          name="projectDescription"
+        ></textarea>
 
-        <label>Project Name</label>
-        <input type="text" id="projectInput" />
+        <label for="volunteerInput">Volunteer Title</label>
+        <input type="text" id="volunteerInput" name="volunteer" />
 
-        <label>Project Description</label>
-        <textarea id="projectDescriptionInput"></textarea>
-        <button type="button" id="addProjectBtn">+ Add More Projects</button>
-
-        <label>Volunteer Title</label>
-        <input type="text" id="volunteerInput" />
-
-        <label>Volunteer Duration</label>
-        <input type="text" id="volunteerDurationInput" />
-        <button type="button" id="addVolunteerBtn">
-          + Add More Volunteer Experience
-        </button>
+        <label for="volunteerDurationInput">Volunteer Duration</label>
+        <input
+          type="text"
+          id="volunteerDurationInput"
+          name="volunteerDuration"
+        />
       </div>
 
       <div class="resume-preview">
         <header>
           <h1 id="previewName">Your Name</h1>
-
           <div class="header_line">
-            <a href="#" id="previewLinkedIn">Your LinkedIn</a> |
-            <a href="#" id="previewEmail">Your Email</a> |
-            <a href="#" id="previewContact">Your Contact</a> |
-            <a href="#" id="previewGitHub">Your GitHub</a>
+            <a id="previewLinkedIn" href="#">Your LinkedIn</a> |
+            <a id="previewEmail" href="#">Your Email</a> |
+            <span id="previewContact">Your Contact</span> |
+            <a id="previewGitHub" href="#">Your GitHub</a>
           </div>
         </header>
 
         <section id="educationSection">
-          <h2>Your Education</h2>
-
+          <h2>Education</h2>
           <div class="item">
             <div class="left">
               <h3 id="previewCollege">Your College Name</h3>
-              <p id="previewDegree">
-                <i>Degree Name</i>
-              </p>
+              <p><i id="previewDegree">Degree Name</i></p>
             </div>
-
             <div class="right">
               <p id="previewGradYear">Year of Graduation</p>
               <p id="previewCgpa">CGPA</p>
@@ -117,65 +107,46 @@
 
         <section id="skillsSection">
           <h2>Skills</h2>
-          <p id="previewLanguages">
-            <b>Frameworks and Languages:</b>
+          <p>
+            <b>Frameworks and Languages: </b><span id="previewLanguages"></span>
           </p>
-
-          <p id="previewTools">
-            <b>Tools and Integration:</b>
-          </p>
-
-          <p id="previewAI">
-            <b>AI & Machine Learning:</b>
-          </p>
+          <p><b>Tools and Integration: </b><span id="previewTools"></span></p>
+          <p><b>AI & Machine Learning: </b><span id="previewAI"></span></p>
         </section>
 
         <section id="experienceSection">
           <h2>Experiences</h2>
-
           <div class="item">
             <div class="left">
               <h3 id="previewRole">Your Role</h3>
             </div>
-
             <div class="right">
               <p><i id="previewDuration">Duration</i></p>
             </div>
           </div>
-
           <p id="previewDescription">Work description goes here.</p>
         </section>
 
         <section id="awardsSection">
           <h2>Awards & Achievements</h2>
-
           <h3 id="previewAward">Name of Award</h3>
           <p id="previewAwardDescription">Description of Award</p>
         </section>
 
         <section id="projectsSection">
           <h2>Projects</h2>
-
-          <div id="projectContainer">
-            <div class="item">
-              <h3 id="previewProject">Name of Project</h3>
-              <p id="previewProjectDescription">Description of Project</p>
-            </div>
-          </div>
+          <h3 id="previewProject">Name of Project</h3>
+          <p id="previewProjectDescription">Description of Project</p>
         </section>
 
         <section id="volunteerSection">
           <h2>Volunteer Experience</h2>
-
           <div class="item">
             <div class="left">
-              <p id="previewVolunteer">
-                <b>Title</b>
-              </p>
+              <p><b id="previewVolunteer">Title</b></p>
             </div>
-
             <div class="right">
-              <p id="previewVolunteerDuration"><i>Duration</i></p>
+              <p><i id="previewVolunteerDuration">Duration</i></p>
             </div>
           </div>
         </section>
@@ -207,71 +178,74 @@
         "volunteerDuration",
       ];
 
-      updatePreview();
       fields.forEach((field) => {
-        const input = document.getElementById(`${field}Input`);
-
+        const input = document.getElementById(field + "Input");
         if (input) {
-          input.addEventListener("input", saveData);
+          input.addEventListener("input", updatePreview);
         }
       });
-
-      function saveData() {
-        fields.forEach((field) => {
-          const input = document.getElementById(`${field}Input`);
-
-          if (input) {
-            localStorage.setItem(field, input.value);
-          }
-        });
-
-        updatePreview();
-      }
 
       function updatePreview() {
-        const previewDefaults = {
-          name: "Your Name",
-          linkedIn: "LinkedIn Profile",
-          email: "example@gmail.com",
-          contact: "Your Contact",
-          github: "GitHub Profile",
-          college: "Your College Name",
-          degree: "Degree Name",
-          gradYear: "Graduation Year",
-          cgpa: "CGPA",
-          languages: "Frameworks and Languages",
-          tools: "Tools and Integration",
-          ai: "AI & Machine Learning",
-          role: "Your Role",
-          duration: "Duration",
-          description: "Work description goes here.",
-          award: "Award Name",
-          awardDescription: "Award Description",
-          project: "Project Name",
-          projectDescription: "Project Description",
-          volunteer: "Volunteer Title",
-          volunteerDuration: "Duration",
-        };
+        const get = (id) => (document.getElementById(id) || {}).value || "";
 
-        fields.forEach((field) => {
-          const previewElement = document.getElementById(
-            `preview${field.charAt(0).toUpperCase() + field.slice(1)}`,
-          );
+        document.getElementById("previewName").textContent =
+          get("nameInput") || "Your Name";
 
-          if (previewElement) {
-            previewElement.innerText =
-              localStorage.getItem(field) || previewDefaults[field];
-          }
-        });
+        const liEl = document.getElementById("previewLinkedIn");
+        liEl.textContent = get("linkedInInput") || "Your LinkedIn";
+        liEl.href = get("linkedInInput")
+          ? "https://" + get("linkedInInput").replace(/^https?:\/\//, "")
+          : "#";
+
+        const emailEl = document.getElementById("previewEmail");
+        emailEl.textContent = get("emailInput") || "Your Email";
+        emailEl.href = get("emailInput") ? "mailto:" + get("emailInput") : "#";
+
+        document.getElementById("previewContact").textContent =
+          get("contactInput") || "Your Contact";
+
+        const ghEl = document.getElementById("previewGitHub");
+        ghEl.textContent = get("githubInput") || "Your GitHub";
+        ghEl.href = get("githubInput")
+          ? "https://" + get("githubInput").replace(/^https?:\/\//, "")
+          : "#";
+
+        document.getElementById("previewCollege").textContent =
+          get("collegeInput") || "Your College Name";
+        document.getElementById("previewDegree").textContent =
+          get("degreeInput") || "Degree Name";
+        document.getElementById("previewGradYear").textContent =
+          get("gradYearInput") || "Year of Graduation";
+        document.getElementById("previewCgpa").textContent =
+          get("cgpaInput") || "CGPA";
+
+        document.getElementById("previewLanguages").textContent =
+          get("languagesInput");
+        document.getElementById("previewTools").textContent = get("toolsInput");
+        document.getElementById("previewAI").textContent = get("aiInput");
+
+        document.getElementById("previewRole").textContent =
+          get("roleInput") || "Your Role";
+        document.getElementById("previewDuration").textContent =
+          get("durationInput") || "Duration";
+        document.getElementById("previewDescription").textContent =
+          get("descriptionInput") || "Work description goes here.";
+
+        document.getElementById("previewAward").textContent =
+          get("awardInput") || "Name of Award";
+        document.getElementById("previewAwardDescription").textContent =
+          get("awardDescriptionInput") || "Description of Award";
+
+        document.getElementById("previewProject").textContent =
+          get("projectInput") || "Name of Project";
+        document.getElementById("previewProjectDescription").textContent =
+          get("projectDescriptionInput") || "Description of Project";
+
+        document.getElementById("previewVolunteer").textContent =
+          get("volunteerInput") || "Title";
+        document.getElementById("previewVolunteerDuration").textContent =
+          get("volunteerDurationInput") || "Duration";
       }
-
-      fields.forEach((field) => {
-        const input = document.getElementById(`${field}Input`);
-
-        if (input) {
-          input.value = localStorage.getItem(field) || "";
-        }
-      });
 
       updatePreview();
     </script>
