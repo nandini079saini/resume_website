@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-section">
+        <label>Name</label>
+        <input type="text" id="nameInput" />
+
+        <label>LinkedIn</label>
+        <input type="text" id="linkedInInput" />
+
+        <label>Email</label>
+        <input type="email" id="emailInput" />
+
+        <label>Contact</label>
+        <input type="text" id="contactInput" />
+
+        <label>GitHub</label>
+        <input type="text" id="githubInput" />
+
+        <label>College Name</label>
+        <input type="text" id="collegeInput" />
+
+        <label>Degree Name</label>
+        <input type="text" id="degreeInput" />
+
+        <label>Graduation Year</label>
+        <input type="text" id="gradYearInput" />
+
+        <label>CGPA</label>
+        <input type="text" id="cgpaInput" />
+
+        <button type="button" id="addEducationBtn">+ Add More Education</button>
+
+        <label>Frameworks and Languages</label>
+        <input type="text" id="languagesInput" />
+
+        <label>Tools and Integration</label>
+        <input type="text" id="toolsInput" />
+
+        <label>AI & Machine Learning</label>
+        <input type="text" id="aiInput" />
+
+        <button type="button" id="addSkillBtn">+ Add More Skills</button>
+
+        <label>Role</label>
+        <input type="text" id="roleInput" />
+
+        <label>Duration</label>
+        <input type="text" id="durationInput" />
+
+        <label>Work Description</label>
+        <textarea id="descriptionInput"></textarea>
+        <button type="button" id="addExperienceBtn">
+          + Add More Experiences
+        </button>
+
+        <label>Award Name</label>
+        <input type="text" id="awardInput" />
+
+        <label>Award Description</label>
+        <textarea id="awardDescriptionInput"></textarea>
+        <button type="button" id="addAwardBtn">+ Add More Awards</button>
+
+        <label>Project Name</label>
+        <input type="text" id="projectInput" />
+
+        <label>Project Description</label>
+        <textarea id="projectDescriptionInput"></textarea>
+        <button type="button" id="addProjectBtn">+ Add More Projects</button>
+
+        <label>Volunteer Title</label>
+        <input type="text" id="volunteerInput" />
+
+        <label>Volunteer Duration</label>
+        <input type="text" id="volunteerDurationInput" />
+        <button type="button" id="addVolunteerBtn">
+          + Add More Volunteer Experience
+        </button>
+      </div>
+
+      <div class="resume-preview">
+        <header>
+          <h1 id="previewName">Your Name</h1>
+
+          <div class="header_line">
+            <a href="#" id="previewLinkedIn">Your LinkedIn</a> |
+            <a href="#" id="previewEmail">Your Email</a> |
+            <a href="#" id="previewContact">Your Contact</a> |
+            <a href="#" id="previewGitHub">Your GitHub</a>
+          </div>
+        </header>
+
+        <section id="educationSection">
+          <h2>Your Education</h2>
+
+          <div class="item">
+            <div class="left">
+              <h3 id="previewCollege">Your College Name</h3>
+              <p id="previewDegree">
+                <i>Degree Name</i>
+              </p>
+            </div>
+
+            <div class="right">
+              <p id="previewGradYear">Year of Graduation</p>
+              <p id="previewCgpa">CGPA</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="skillsSection">
+          <h2>Skills</h2>
+          <p id="previewLanguages">
+            <b>Frameworks and Languages:</b>
+          </p>
+
+          <p id="previewTools">
+            <b>Tools and Integration:</b>
+          </p>
+
+          <p id="previewAI">
+            <b>AI & Machine Learning:</b>
+          </p>
+        </section>
+
+        <section id="experienceSection">
+          <h2>Experiences</h2>
+
+          <div class="item">
+            <div class="left">
+              <h3 id="previewRole">Your Role</h3>
+            </div>
+
+            <div class="right">
+              <p><i id="previewDuration">Duration</i></p>
+            </div>
+          </div>
+
+          <p id="previewDescription">Work description goes here.</p>
+        </section>
+
+        <section id="awardsSection">
+          <h2>Awards & Achievements</h2>
+
+          <h3 id="previewAward">Name of Award</h3>
+          <p id="previewAwardDescription">Description of Award</p>
+        </section>
+
+        <section id="projectsSection">
+          <h2>Projects</h2>
+
+          <div id="projectContainer">
+            <div class="item">
+              <h3 id="previewProject">Name of Project</h3>
+              <p id="previewProjectDescription">Description of Project</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="volunteerSection">
+          <h2>Volunteer Experience</h2>
+
+          <div class="item">
+            <div class="left">
+              <p id="previewVolunteer">
+                <b>Title</b>
+              </p>
+            </div>
+
+            <div class="right">
+              <p id="previewVolunteerDuration"><i>Duration</i></p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script>
+      const fields = [
+        "name",
+        "linkedIn",
+        "email",
+        "contact",
+        "github",
+        "college",
+        "degree",
+        "gradYear",
+        "cgpa",
+        "languages",
+        "tools",
+        "ai",
+        "role",
+        "duration",
+        "description",
+        "award",
+        "awardDescription",
+        "project",
+        "projectDescription",
+        "volunteer",
+        "volunteerDuration",
+      ];
+
+      updatePreview();
+      fields.forEach((field) => {
+        const input = document.getElementById(`${field}Input`);
+
+        if (input) {
+          input.addEventListener("input", saveData);
+        }
+      });
+
+      function saveData() {
+        fields.forEach((field) => {
+          const input = document.getElementById(`${field}Input`);
+
+          if (input) {
+            localStorage.setItem(field, input.value);
+          }
+        });
+
+        updatePreview();
+      }
+
+      function updatePreview() {
+        const previewDefaults = {
+          name: "Your Name",
+          linkedIn: "LinkedIn Profile",
+          email: "example@gmail.com",
+          contact: "Your Contact",
+          github: "GitHub Profile",
+          college: "Your College Name",
+          degree: "Degree Name",
+          gradYear: "Graduation Year",
+          cgpa: "CGPA",
+          languages: "Frameworks and Languages",
+          tools: "Tools and Integration",
+          ai: "AI & Machine Learning",
+          role: "Your Role",
+          duration: "Duration",
+          description: "Work description goes here.",
+          award: "Award Name",
+          awardDescription: "Award Description",
+          project: "Project Name",
+          projectDescription: "Project Description",
+          volunteer: "Volunteer Title",
+          volunteerDuration: "Duration",
+        };
+
+        fields.forEach((field) => {
+          const previewElement = document.getElementById(
+            `preview${field.charAt(0).toUpperCase() + field.slice(1)}`,
+          );
+
+          if (previewElement) {
+            previewElement.innerText =
+              localStorage.getItem(field) || previewDefaults[field];
+          }
+        });
+      }
+
+      fields.forEach((field) => {
+        const input = document.getElementById(`${field}Input`);
+
+        if (input) {
+          input.value = localStorage.getItem(field) || "";
+        }
+      });
+
+      updatePreview();
+    </script>
+  </body>
+</html>
+
+git init git add . git commit -m "Initial commit with resume builder HTML and
+JavaScript" git remote add origin YOUR_REPO_URL git branch -M main git push -u
+origin main
